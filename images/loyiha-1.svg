@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400">
+  <rect width="640" height="400" fill="#f6e1cf"/>
+  <circle cx="540" cy="70" r="90" fill="#efcfb4"/>
+  <circle cx="90" cy="350" r="70" fill="#efcfb4"/>
+  <!-- noutbuk -->
+  <rect x="170" y="90" width="300" height="190" rx="14" fill="#3a2419"/>
+  <rect x="184" y="104" width="272" height="162" rx="6" fill="#fffaf4"/>
+  <rect x="140" y="280" width="360" height="22" rx="11" fill="#5a3a2a"/>
+  <rect x="290" y="280" width="60" height="8" rx="4" fill="#3a2419"/>
+  <!-- kod qatorlari -->
+  <rect x="204" y="126" width="70" height="10" rx="5" fill="#b5562b"/>
+  <rect x="284" y="126" width="110" height="10" rx="5" fill="#e3b08c"/>
+  <rect x="224" y="150" width="130" height="10" rx="5" fill="#d9a07a"/>
+  <rect x="224" y="174" width="90" height="10" rx="5" fill="#b5562b"/>
+  <rect x="324" y="174" width="80" height="10" rx="5" fill="#e3b08c"/>
+  <rect x="224" y="198" width="150" height="10" rx="5" fill="#d9a07a"/>
+  <rect x="204" y="222" width="60" height="10" rx="5" fill="#b5562b"/>
+  <!-- bitiruv qalpog'i -->
+  <polygon points="470,150 560,185 470,220 380,185" fill="#2e1a12"/>
+  <path d="M415 199 v30 c0 14 110 14 110 0 v-30 l-55 21z" fill="#4a2e20"/>
+  <line x1="548" y1="190" x2="548" y2="240" stroke="#e8961f" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="548" cy="245" r="8" fill="#e8961f"/>
+</svg>

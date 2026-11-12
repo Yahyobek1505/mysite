@@ -1,0 +1,24 @@
+# Maxfiy sozlamalar (parol, kalit) — hech qachon GitHub'ga chiqmasin
+.env
+.env.*
+*.key
+*.pem
+
+# Claude Code'ning mahalliy sozlamalari
+.claude/
+
+# Tizim va muharrir fayllari
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Vaqtinchalik va log fayllar
+*.log
+*.tmp
+node_modules/
+
+# Saytga tegishli bo'lmagan papka
+sayt-bloklash/

@@ -134,6 +134,7 @@ section[id] { scroll-margin-top: 96px; }
   font-size: 14px; color: var(--hero-muted);
   margin-bottom: 22px;
 }
+.hero-stars { display: flex; gap: 2px; }
 .hero-badge svg { width: 18px; height: 18px; color: #e8961f; }
 .hero h1 {
   font-family: "Outfit", sans-serif; font-weight: 400;

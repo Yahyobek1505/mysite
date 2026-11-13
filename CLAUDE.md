@@ -3,11 +3,11 @@
 ## Loyiha
 - Yahyobek O'rinboyevning shaxsiy sayti. U 5 yildan ortiq tajribaga ega IT mutaxassis va o'qituvchi.
 - Saytni o'quvchilar, ota-onalar, o'quv markazlari va kichik biznes egalari ko'radi.
-- Bo'limlari: hero, xizmatlar (3 ta), loyihalar (kartochkalar), aloqa (telefon +998905644607, Telegram @Yahyohon_1505).
+- Bo'limlari: hero, xizmatlar (3 ta), ishlarim (kartalar), mijozlar fikri (haqiqiy fikrlar kelguncha yashirin), savol-javob, aloqa (telefon +998905644607, Telegram @Yahyohon_1505).
 - Sayt va suhbat tili o'zbekcha (lotin). Matn sodda va xushmuomala bo'lsin, rasmiyatchiliksiz.
 
 ## Uslub
-- Professional, minimalistik, ta'limga mos ohang. Ortiqcha bezak va animatsiya qo'shilmaydi.
+- Professional, minimalistik, ta'limga mos ohang. Ortiqcha bezak yo'q; animatsiya faqat yengil va tez (0.6 soniyagacha, xiralik va kichik siljish), "harakatni kamaytirish" sozlamasida o'chadi.
 - Iliq ranglar: krem fon va terrakota urg'u rangi (`--accent: #b5562b`). Ranglar faqat `style.css` boshidagi o'zgaruvchilardan olinadi.
 - Har bir o'zgarish yorug' va qorong'i mavzuda, telefon va kompyuterda ishlashi kerak.
 - Shriftlar: hero va menyuda Outfit, matnda Inter, bo'lim sarlavhalarida Merriweather.

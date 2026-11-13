@@ -6,6 +6,9 @@
   var root = document.documentElement;
   var KEY = "theme";
 
+  // JS ishlayotganini bildiradi: bo'limlarning "paydo bo'lish" animatsiyasi faqat shunda yoqiladi
+  root.classList.add("js");
+
   function getSaved() {
     try { return localStorage.getItem(KEY); } catch (e) { return null; }
   }
@@ -89,4 +92,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }, { rootMargin: "-45% 0px -50% 0px" });
 
   document.querySelectorAll("section[id]").forEach(function (s) { observer.observe(s); });
+});
+
+// Scroll qilganda bo'limlar yumshoq paydo bo'ladi (har biri faqat bir marta)
+document.addEventListener("DOMContentLoaded", function () {
+  var items = document.querySelectorAll("section.block > .container");
+  if (!("IntersectionObserver" in window)) {
+    items.forEach(function (el) { el.classList.add("visible"); });
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: "0px 0px -10% 0px" });
+  items.forEach(function (el) { observer.observe(el); });
 });

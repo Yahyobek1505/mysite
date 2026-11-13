@@ -55,7 +55,9 @@ html { scroll-behavior: smooth; }
 /* Qurilmada "harakatni kamaytirish" yoqilgan bo'lsa — silliq o'tish va animatsiyalar o'chadi */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  /* !important — pastdagi "paydo bo'lish" qoidasidan ustun turishi uchun */
+  .js section.block > .container { opacity: 1 !important; transform: none !important; }
 }
 body {
   font-family: "Inter", system-ui, sans-serif;
@@ -223,6 +225,21 @@ section[id] { scroll-margin-top: 96px; }
 }
 .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
 
+/* Sahifa ochilganda hero elementlari ketma-ket yumshoq chiqadi.
+   "backwards" — animatsiya tugagach hover effektlariga xalaqit bermaydi. */
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero-badge, .hero h1, .hero p, .hero-cta, .hero-areas, .hero-photo {
+  animation: heroIn .6s ease backwards;
+}
+.hero h1     { animation-delay: .1s; }
+.hero p      { animation-delay: .2s; }
+.hero-cta    { animation-delay: .3s; }
+.hero-photo  { animation-delay: .25s; }
+.hero-areas  { animation-delay: .35s; }
+
 /* ===== Tugmalar ===== */
 .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn {
@@ -252,7 +269,9 @@ section.block { padding: 88px 0; }
   background: var(--card); border: 1px solid var(--border);
   border-radius: 16px; padding: 36px;
   margin-bottom: 20px;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
+.service:hover { transform: translateY(-4px); box-shadow: 0 14px 30px var(--shadow); }
 .service-icon {
   width: 120px; height: 120px; border-radius: 24px;
   background: var(--accent-soft); color: var(--accent);
@@ -286,13 +305,23 @@ section.block { padding: 88px 0; }
 .project-body h3 { font-size: 19px; margin-bottom: 8px; }
 .project-body p { color: var(--muted); font-size: 15px; }
 
+/* ===== Jonlanish: bo'limlar pastdan yumshoq chiqadi ===== */
+.js section.block > .container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.js section.block > .container.visible { opacity: 1; transform: none; }
+
 /* ===== Mijozlar fikri ===== */
 .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
 .review {
   background: var(--card); border: 1px solid var(--border);
   border-radius: 16px; padding: 28px;
   display: flex; flex-direction: column; gap: 20px;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
+.review:hover { transform: translateY(-4px); box-shadow: 0 14px 30px var(--shadow); }
 .review-quote { width: 32px; height: 32px; color: var(--accent); }
 .review blockquote { color: var(--text); font-size: 16px; line-height: 1.65; flex: 1; }
 .review figcaption { display: flex; align-items: center; gap: 12px; padding-top: 18px; border-top: 1px solid var(--border); }
@@ -324,8 +353,14 @@ section.block { padding: 88px 0; }
   background: var(--accent-soft); color: var(--accent);
   display: flex; align-items: center; justify-content: center;
   font-size: 20px; font-weight: 500;
+  transition: transform .2s ease;
 }
-.faq-item[open] summary::after { content: "−"; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item[open] p { animation: faqIn .3s ease; }
+@keyframes faqIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
 .faq-item summary:hover { color: var(--accent); }
 .faq-item p { padding: 0 24px 22px; color: var(--muted); }
 .faq-item a { color: var(--accent); }

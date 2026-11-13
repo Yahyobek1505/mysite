@@ -13,27 +13,33 @@
 <body>
   <header class="site-header">
     <nav class="nav-pill">
-      <a class="logo" href="#">
+      <a class="logo" href="#bosh">
         Yahyobek O'rinboyev
         <span class="logo-tag">IT · Ta'lim</span>
       </a>
       <div class="nav-right">
-        <ul class="menu">
-          <li><a href="#">Bosh sahifa</a></li>
+        <ul class="menu" id="menu">
           <li><a href="#xizmatlar">Xizmatlar</a></li>
-          <li><a href="#loyihalar">Loyihalar</a></li>
+          <li><a href="#ishlarim">Ishlarim</a></li>
+          <li hidden><a href="#fikrlar">Fikrlar</a></li>
+          <li><a href="#savollar">Savol-javob</a></li>
+          <li class="menu-contact"><a href="#aloqa">Bog'lanish</a></li>
         </ul>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Mavzuni almashtirish">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
         </button>
         <a class="nav-cta" href="#aloqa">Bog'lanish</a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Menyuni ochish" aria-controls="menu" aria-expanded="false">
+          <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
       </div>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="bosh">
     <div class="container hero-grid">
       <div class="hero-text">
         <div class="hero-badge">
@@ -132,13 +138,13 @@
     </div>
   </section>
 
-  <!-- LOYIHALAR -->
-  <!-- Loyiha rasmlari: images/loyiha-1.svg ... loyiha-3.svg. O'z rasmlaringiz bilan almashtirishingiz mumkin -->
-  <section class="block projects-bg" id="loyihalar">
+  <!-- ISHLARIM -->
+  <!-- Rasmlar: images/loyiha-1.svg ... loyiha-3.svg. O'z rasmlaringiz bilan almashtirishingiz mumkin -->
+  <section class="block projects-bg" id="ishlarim">
     <div class="container">
       <div class="section-head">
         <div class="label">Portfolio</div>
-        <h2>Loyihalarim</h2>
+        <h2>Ishlarim</h2>
         <p>Turli yo'nalishlarda bajarilgan ishlarimdan namunalar.</p>
       </div>
 
@@ -175,6 +181,77 @@
             <p>Loyiha haqida qisqa tavsif shu yerda bo'ladi.</p>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIJOZLAR FIKRI -->
+  <!-- Faqat haqiqiy fikrlar qo'yiladi (mijoz roziligi bilan). Vaqtincha matnni almashtiring. -->
+  <!-- VAQTINCHA YASHIRILGAN. Qaytarish uchun: bu yerdagi va menyudagi "hidden" so'zini olib tashlang,
+       pastdagi "Savol-javob" bo'limiga esa yana "alt-bg" klassini qo'shing. -->
+  <section class="block" id="fikrlar" hidden>
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Mijozlar fikri</div>
+        <h2>Men bilan ishlaganlar nima deydi</h2>
+        <p>O'quvchilar, ota-onalar va hamkorlarning fikrlari.</p>
+      </div>
+
+      <div class="reviews">
+        <figure class="review">
+          <svg class="review-quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.2 6C4.9 7.2 3.5 9.4 3.5 12.3V18h6v-6H6.6c.1-1.9 1-3.3 2.6-4.2zm9.5 0c-2.3 1.2-3.7 3.4-3.7 6.3V18h6v-6h-2.9c.1-1.9 1-3.3 2.6-4.2z"/></svg>
+          <blockquote>Bu yerga mijoz fikri qo'yiladi — 2–3 jumladan iborat qisqa sharh.</blockquote>
+          <figcaption>
+            <span class="review-avatar">?</span>
+            <span><strong>Mijoz ismi</strong><small>Kimligi (masalan, ota-ona)</small></span>
+          </figcaption>
+        </figure>
+        <figure class="review">
+          <svg class="review-quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.2 6C4.9 7.2 3.5 9.4 3.5 12.3V18h6v-6H6.6c.1-1.9 1-3.3 2.6-4.2zm9.5 0c-2.3 1.2-3.7 3.4-3.7 6.3V18h6v-6h-2.9c.1-1.9 1-3.3 2.6-4.2z"/></svg>
+          <blockquote>Bu yerga mijoz fikri qo'yiladi — 2–3 jumladan iborat qisqa sharh.</blockquote>
+          <figcaption>
+            <span class="review-avatar">?</span>
+            <span><strong>Mijoz ismi</strong><small>Kimligi (masalan, ota-ona)</small></span>
+          </figcaption>
+        </figure>
+        <figure class="review">
+          <svg class="review-quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.2 6C4.9 7.2 3.5 9.4 3.5 12.3V18h6v-6H6.6c.1-1.9 1-3.3 2.6-4.2zm9.5 0c-2.3 1.2-3.7 3.4-3.7 6.3V18h6v-6h-2.9c.1-1.9 1-3.3 2.6-4.2z"/></svg>
+          <blockquote>Bu yerga mijoz fikri qo'yiladi — 2–3 jumladan iborat qisqa sharh.</blockquote>
+          <figcaption>
+            <span class="review-avatar">?</span>
+            <span><strong>Mijoz ismi</strong><small>Kimligi (masalan, ota-ona)</small></span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAVOL-JAVOB -->
+  <section class="block" id="savollar">
+    <div class="container">
+      <div class="section-head">
+        <div class="label">Savol-javob</div>
+        <h2>Ko'p beriladigan savollar</h2>
+        <p>Javobini topa olmasangiz, bemalol yozing.</p>
+      </div>
+
+      <div class="faq">
+        <details class="faq-item">
+          <summary>Qanday bog'lanaman?</summary>
+          <p>Telefon qiling (+998 90 564 46 07) yoki Telegram'da <a href="https://t.me/Yahyohon_1505" target="_blank" rel="noopener">@Yahyohon_1505</a> ga yozing. Xabaringizni ko'rishim bilan javob beraman.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Qaysi xizmatlarni ko'rsatasiz?</summary>
+          <p>Uch yo'nalishda ishlayman: ta'lim dasturlari tuzish, IT xizmatlari ko'rsatish va biznesni avtomatlashtirish. Batafsil ma'lumot <a href="#xizmatlar">Xizmatlar</a> bo'limida.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Onlayn ishlaysizmi?</summary>
+          <p>Bu ish turiga bog'liq. Qaysi usul siz uchun qulay ekanini birinchi suhbatda birga kelishib olamiz.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Ish qancha vaqt oladi?</summary>
+          <p>Vazifaning hajmiga bog'liq. Vazifangiz bilan tanishib chiqqanimdan keyin aniq muddatni aytaman.</p>
+        </details>
       </div>
     </div>
   </section>

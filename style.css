@@ -52,6 +52,11 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+/* Qurilmada "harakatni kamaytirish" yoqilgan bo'lsa — silliq o'tish va animatsiyalar o'chadi */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
 body {
   font-family: "Inter", system-ui, sans-serif;
   background: var(--bg);
@@ -93,7 +98,8 @@ h1, h2, h3 { font-family: "Merriweather", serif; line-height: 1.2; }
 .nav-right { display: flex; align-items: center; gap: 20px; }
 .menu { display: flex; gap: 28px; list-style: none; }
 .menu a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 15px; }
-.menu a:hover { color: var(--accent); }
+.menu a:hover, .menu a.active { color: var(--accent); }
+.menu-contact { display: none; }
 .nav-cta {
   background: var(--hero-cta); color: #fff;
   text-decoration: none; font-weight: 600; font-size: 15px;
@@ -115,6 +121,42 @@ h1, h2, h3 { font-family: "Merriweather", serif; line-height: 1.2; }
 .theme-toggle .icon-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* Telefon menyusi tugmasi (☰) — faqat tor ekranlarda ko'rinadi */
+.menu-toggle {
+  display: none;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent; color: var(--text);
+  align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.menu-toggle svg { width: 20px; height: 20px; }
+.menu-toggle .icon-close { display: none; }
+.site-header.open .menu-toggle .icon-open { display: none; }
+.site-header.open .menu-toggle .icon-close { display: block; }
+
+@media (max-width: 960px) {
+  .nav-pill { position: relative; }
+  .menu-toggle { display: flex; }
+  .menu {
+    display: none;
+    position: absolute; top: calc(100% + 8px); left: 0; right: 0;
+    flex-direction: column; gap: 2px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+  .site-header.open .menu { display: flex; }
+  .menu a { display: block; padding: 12px 16px; border-radius: 10px; font-size: 16px; }
+  .menu a:hover, .menu a.active { background: var(--accent-soft); }
+}
+@media (max-width: 480px) {
+  .nav-cta { display: none; }
+  .menu-contact { display: block; }
+}
 
 /* Menyu bosilganda bo'lim panel ostida qolib ketmasin */
 section[id] { scroll-margin-top: 96px; }
@@ -224,7 +266,7 @@ section.block { padding: 88px 0; }
 .tags li { background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; font-size: 13px; color: var(--muted); }
 
 /* ===== Loyihalar ===== */
-.projects-bg { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.projects-bg, .alt-bg { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
 .project {
   background: var(--bg); border: 1px solid var(--border);
@@ -244,6 +286,50 @@ section.block { padding: 88px 0; }
 .project-body h3 { font-size: 19px; margin-bottom: 8px; }
 .project-body p { color: var(--muted); font-size: 15px; }
 
+/* ===== Mijozlar fikri ===== */
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.review {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 28px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.review-quote { width: 32px; height: 32px; color: var(--accent); }
+.review blockquote { color: var(--text); font-size: 16px; line-height: 1.65; flex: 1; }
+.review figcaption { display: flex; align-items: center; gap: 12px; padding-top: 18px; border-top: 1px solid var(--border); }
+.review-avatar {
+  width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+  background: var(--accent-soft); color: var(--accent-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 600;
+}
+.review strong { display: block; font-size: 15px; }
+.review small { color: var(--muted); font-size: 13px; }
+
+/* ===== Savol-javob ===== */
+.faq { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.faq-item summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 20px 24px;
+  font-weight: 600; font-size: 17px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; flex-shrink: 0;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 500;
+}
+.faq-item[open] summary::after { content: "−"; }
+.faq-item summary:hover { color: var(--accent); }
+.faq-item p { padding: 0 24px 22px; color: var(--muted); }
+.faq-item a { color: var(--accent); }
+
 /* ===== Aloqa ===== */
 .contact-box {
   background: var(--contact-bg); color: #fff;
@@ -260,7 +346,6 @@ footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: 14
 
 /* ===== Telefon ekranlari ===== */
 @media (max-width: 760px) {
-  .menu { display: none; }
   .nav-pill { padding: 0 8px 0 16px; height: 58px; }
   .logo { font-size: 16px; }
   .logo-tag { display: none; }

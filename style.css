@@ -286,7 +286,7 @@ section.block { padding: 88px 0; }
 
 /* ===== Loyihalar ===== */
 .projects-bg, .alt-bg { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 24px; }
 .project {
   background: var(--bg); border: 1px solid var(--border);
   border-radius: 16px; overflow: hidden;
@@ -314,7 +314,7 @@ section.block { padding: 88px 0; }
 .js section.block > .container.visible { opacity: 1; transform: none; }
 
 /* ===== Mijozlar fikri ===== */
-.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 24px; }
 .review {
   background: var(--card); border: 1px solid var(--border);
   border-radius: 16px; padding: 28px;
@@ -400,4 +400,23 @@ footer { padding: 32px 0; text-align: center; color: var(--muted); font-size: 14
   .service-icon { width: 80px; height: 80px; border-radius: 18px; }
   .service-icon svg { width: 36px; height: 36px; }
   .btn { flex: 1 1 200px; }
+}
+
+/* ===== Kichik telefonlar (400px va undan tor) ===== */
+@media (max-width: 400px) {
+  .logo { padding: 8px 0; }
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 16px; }
+  .hero-cta { font-size: 16px; }
+  section.block { padding: 56px 0; }
+  .section-head { margin-bottom: 32px; }
+  .section-head h2, .contact-box h2 { font-size: 25px; }
+  .service { padding: 24px 18px; }
+  .service h3 { font-size: 21px; }
+  .project-body { padding: 18px; }
+  .review { padding: 22px; }
+  .faq-item summary { padding: 16px 18px; font-size: 16px; }
+  .faq-item p { padding: 0 18px 18px; }
+  .contact-box { padding: 40px 20px; border-radius: 16px; }
+  .btn { min-height: 48px; }
 }

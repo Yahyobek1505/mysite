@@ -19,6 +19,9 @@
 
   function apply(theme) {
     root.setAttribute("data-theme", theme);
+    // Telefon brauzerining yuqori paneli rangi (hero foniga mos)
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#2a140e" : "#f6e9dc");
   }
 
   // 1. Avval saqlangan tanlov, bo'lmasa qurilma sozlamasi

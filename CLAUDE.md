@@ -3,7 +3,9 @@
 ## Loyiha
 - Yahyobek O'rinboyevning shaxsiy sayti. U 5 yildan ortiq tajribaga ega IT mutaxassis va o'qituvchi.
 - Saytni o'quvchilar, ota-onalar, o'quv markazlari va kichik biznes egalari ko'radi.
-- Bo'limlari: hero, xizmatlar (3 ta), ishlarim (kartalar), mijozlar fikri (haqiqiy fikrlar kelguncha yashirin), savol-javob, aloqa (telefon +998905644607, Telegram @Yahyohon_1505).
+- Bo'limlari: hero, xizmatlar (3 ta), ishlarim (ITLINE ERP, valiteach.uz), savol-javob, aloqa (telefon +998905644607, Telegram @Yahyohon_1505). Mijozlar fikri bo'limi haqiqiy fikrlar kelguncha olib turilgan (tayyor kod git tarixida, commit cf66c0e).
+- Asosiy manzil: **https://yahyohon.uz/** (canonical, havola kartasi, sitemap shu manzilda). Eski `yahyobek1505.github.io/mysite` nusxasi yahyohon.uz ga yo'naltiriladi va keyinroq o'chiriladi.
+- O'zbekiston bo'ylab onlayn va oflayn ishlaydi. SEO kalit so'zlari: IT kurslar, kompyuter savodxonligi, Telegram bot, Yahyobek/Yahyohon, ustoz Yahyobek.
 - Sayt va suhbat tili o'zbekcha (lotin). Matn sodda va xushmuomala bo'lsin, rasmiyatchiliksiz.
 
 ## Uslub
@@ -14,7 +16,8 @@
 - O'ylab topilgan raqam, sharh yoki mijoz logotipi qo'yilmaydi. Faqat Yahyobek bergan ma'lumot ishlatiladi.
 
 ## Texnik chegaralar
-- Faqat oddiy HTML, CSS va JS: `index.html`, `style.css`, `script.js`. Yangi fayl faqat zarur bo'lsa qo'shiladi.
+- Faqat oddiy HTML, CSS va JS: `index.html`, `style.css`, `script.js` (+ `robots.txt`, `sitemap.xml`). Yangi fayl faqat zarur bo'lsa qo'shiladi.
+- Joylash: `main` ga push → GitHub Actions (`.github/workflows/deploy.yml`) saytni rsync bilan serverga (`/var/www/yahyohon.uz/`, Caddy) yuklaydi. Kalitlar faqat GitHub Secrets'da.
 - Framework, kutubxona, npm va build bosqichi yo'q. Tashqi manbadan faqat Google Fonts ulanadi.
 - Rasmlar `images/` papkasida turadi. Rasm topilmasa, sahifa buzilmasdan vaqtincha ko'rinish chiqishi kerak.
 - `sayt-bloklash/` papkasi bu saytga tegishli emas, unga tegilmaydi.

@@ -204,6 +204,19 @@ section[id] { scroll-margin-top: 96px; }
 }
 .hero-cta-icon svg { width: 18px; height: 18px; }
 
+/* Ijtimoiy tarmoqlar (Bog'lanish tugmasi yonida) */
+.hero-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.hero-social { display: flex; gap: 10px; }
+.hero-social a {
+  width: 46px; height: 46px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--hero-text);
+  border: 1.5px solid var(--hero-faded);
+  transition: color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.hero-social a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+.hero-social svg { width: 20px; height: 20px; }
+
 .hero-areas { margin-top: 56px; }
 .hero-areas-label { font-size: 16px; color: var(--hero-muted); margin-bottom: 16px; }
 .hero-areas ul { display: flex; flex-wrap: wrap; gap: 32px; list-style: none; }
@@ -231,12 +244,13 @@ section[id] { scroll-margin-top: 96px; }
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: none; }
 }
-.hero-badge, .hero h1, .hero p, .hero-cta, .hero-areas, .hero-photo {
+.hero-badge, .hero h1, .hero p, .hero-cta, .hero-social, .hero-areas, .hero-photo {
   animation: heroIn .6s ease backwards;
 }
 .hero h1     { animation-delay: .1s; }
 .hero p      { animation-delay: .2s; }
 .hero-cta    { animation-delay: .3s; }
+.hero-social { animation-delay: .35s; }
 .hero-photo  { animation-delay: .25s; }
 .hero-areas  { animation-delay: .35s; }
 
@@ -286,7 +300,7 @@ section.block { padding: 88px 0; }
 
 /* ===== Loyihalar ===== */
 .projects-bg, .alt-bg { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 24px; }
+.projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px; }
 .project {
   background: var(--bg); border: 1px solid var(--border);
   border-radius: 16px; overflow: hidden;
@@ -304,6 +318,13 @@ section.block { padding: 88px 0; }
 .project-body .cat { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 6px; }
 .project-body h3 { font-size: 19px; margin-bottom: 8px; }
 .project-body p { color: var(--muted); font-size: 15px; }
+.project-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 14px;
+  color: var(--accent); font-weight: 600; font-size: 15px; text-decoration: none;
+}
+.project-link:hover { text-decoration: underline; }
+.project-link svg { width: 16px; height: 16px; }
 
 /* ===== Jonlanish: bo'limlar pastdan yumshoq chiqadi ===== */
 .js section.block > .container {

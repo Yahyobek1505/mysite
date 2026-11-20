@@ -1,0 +1,5 @@
+# Qidiruv tizimlari uchun: saytning hamma qismi ochiq
+User-agent: *
+Allow: /
+
+Sitemap: https://yahyohon.uz/sitemap.xml

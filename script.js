@@ -2,6 +2,11 @@
 // Bu fayl <head> ichida ulanadi, shuning uchun mavzu sahifa chizilishidan oldin o'rnatiladi
 // va sahifa ochilganda "miltillash" bo'lmaydi.
 
+// Asosiy manzil — yahyohon.uz. Eski github.io nusxasidan kelganlarni shu yerga o'tkazamiz.
+if (/\.github\.io$/.test(location.hostname)) {
+  location.replace("https://yahyohon.uz/" + location.hash);
+}
+
 (function () {
   var root = document.documentElement;
   var KEY = "theme";
